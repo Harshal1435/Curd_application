@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curd application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header -->
+    <section class="container_fluid header">
+        <div class="container header_container">
+            <div class="logo"><h1>Movies </h1></div>
+            <button class="but" onclick="addMovie()">Create movie </button>
+        </div>
+    </section>
+    <!--   create movie container -->
+  <section class="view" id="create_movie">
+        <div class="view_container" >
+            <div class="close">
+             <i class="fa-solid fa-circle-xmark" onclick="closemoviedetails('create_movie')"></i></div>
+             <div class="add_movie">
+                <h3>Add Movie</h3>
+                <form class="input" id="inputs">
+                    <input type="text" placeholder="Enter movie title" id="movie_title" required >
+            <input type="text" placeholder="Enter  movie geners in , seperated" id="movie_geners" required >
+            <input type="text" placeholder="Enter movie duration" id="movie_duration" required >
+            <input type="text" placeholder="Enter movie release date" id="movie_relese_date" required onclick="textChangetoDate()">
+            <input type="text" placeholder="Enter movie IMDB rating" id="movie_imdbrating" required >
+            <input type="text" placeholder="Enter movie actors in , seperated" id="movie_actors" required >
+            <input type="url" placeholder="Enter the poster url" id="movie_poster_url" required class="movie_url" >
+            <textarea placeholder="Enter movie story line" id="movie_story_line" required cols="30" rows="4" class="movie_url" ></textarea>
+                    
+                    <button class="but" onclick="createMovie()">Add movie</button>
+                </form>
+            
+                
+            </div>
+        </div>
+        
+    </section>
+   <!--  View container --> 
+       <section class="view" id="movie_container">
+        <div class="view_container" >
+            <div class="close">
+             <i class="fa-solid fa-circle-xmark" onclick="closemoviedetails('movie_container')"></i>
+            </div>
+            <div class="img_container">
+                <div class="image"
+             >
+                <img src=""
+               id="image"></div>
+                <div class="genera" id="genera">Crime,
+      Drama,
+      Musical</div>
+            </div>
+            <div class="img_info">
+                
+                <h4 id="movie_name"></h4>
+                <div>
+                <h4>Story line</h4>
+                <p id="story_line">
+               
+                </p>
+                </div>
+                <div>
+                <h4>
+                    Actor
+                </h4>
+                <p id="actor"></p>
+                </div>
+                <div>
+                    <h4>Release date</h4>
+                    <p id="releasedate"></p>
+                </div>
+                <div>
+                    <h4>Duration</h4>
+                    <p id="duration"></p>
+                </div>
+                <div>
+                    <h4>Rating</h4>
+                    <div>
+                        <h4>
+                            Imdb ratting
+                        </h4>
+                        <p id="imdbrating"></p>
+                    </div>
+                    <div>
+                        <h4>Average rating</h4>
+                        <p id="averagerating"></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+  
+   <!--  table container --> 
+    <section class="container_fluid table">
+        <div class="container table_container">
+        <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Releaseddate</th>
+                <th>Duration</th>
+                <th>Geners</th>
+                <th>Imdbratting</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="movie_data">
+            
+        </tbody>
+       </table>
+    </section>
+    
+    <script src="main.js"></script>
+</body>
+</html>
